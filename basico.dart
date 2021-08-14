@@ -9,7 +9,7 @@ void main() {
   int edad = 27;
   double peso = 75.20;
   double altura = 69.20;
-  print('Su edad es : ${edad}');
+  print('Su edad es : ${edad}, Usted es ${edad > 17 ? 'Mayor de Edad': 'Menor de edad'}');
   // Uso de condiciones if, switch, while
   if(altura + 5.00 >= peso){
     print('Su peso de ${peso} es ideal');
@@ -75,4 +75,4 @@ void main() {
     anio_pasados.add(anio_nacimiento);
   }
   print(anio_pasados);
-}
+ }
