@@ -1,4 +1,4 @@
-// Introducion del lenguaje 
+// Introducion a .dart
 void main() {
   // Tipos de variables (Entero, flotante, bolean, texto)
   var nombre = 'Jean Carlos';
@@ -21,10 +21,32 @@ void main() {
   // const o final
   const String fecha_nacimiento = '27/01/1994';
   print('Usted nacio en ${fecha_nacimiento}');
+  // Dinamic permite crear una variable sin definir el tipo de variable
   var mes_nacimiento = '01';
   var anio_nacimiento = 1994;
   var mes;
-  // Dinamic permite crear una variable sin definir el tipo de variable
+  // Variables dinamicas como lista, especificamos el tipo de datos
+  // que va almacenar
+  List<String> familia;
+  // inicializamos la lista
+  familia = [];
+  familia.add('Tania Elizabeth Ordinola Saavedra');
+  familia.add('Evelyn Ordinola Saavedra');
+  familia.add('Cesar Augusto Ordinola Camacho');
+  familia.add('Magdalena Saavedra Ramirez');
+  // Establecer lista sin repetir
+  Set colores = Set.from(['Amarillo', 'Rojo', 'Azúl']);
+  colores.add('Rojo');
+  // Llaves y valor
+  var mejores_peliculas={
+    '2014':'Capitan America',
+    '2015':'AntMan',
+    '2016':'Me before you',
+    '2017':'Wonder Woman',
+    '2018':'Rey Leon',
+    '2019':'Avengers End Game'
+  };
+  // bucles con switch, do,while y for
   switch(mes_nacimiento) {
     case '01':
       mes = 'Enero';
@@ -65,14 +87,25 @@ void main() {
   }
   print('Usted es del mes de ${mes}');
   var separdor_linea = '.';
-  for(var i=0;i < 55; i++){
-    separdor_linea = separdor_linea + '.';
-  };
-  print(separdor_linea);
-  var anio_pasados = [];
-  while (anio_nacimiento != 2021){
-    anio_nacimiento++;
-    anio_pasados.add(anio_nacimiento);
+  print('Sus familiares son los siguientes:');
+  for (var item in familia){
+    print(' * $item');
   }
-  print(anio_pasados);
+  print('Sus colores favoritos son:');
+  for(var i=0;i < colores.length; i++){
+    // A diferncia de las listas debemos usar elementAt para
+    // llamar los items que nos e repiten.
+    print(' * ${colores.elementAt(i)}');
+  };
+  print('Sus peliculas favoritos son:');
+  // Para llamar unas dicionario se utiliza la funcion foreach()
+  mejores_peliculas.forEach((llave,description) => print(' * $llave -> $description'));
+  // Otra forma de usar dicionarios inicando tipos de variables se usa map,
+  // para llamar los datos tambien usamos forEach()
+  Map<String, int> alumnos = new Map();
+  alumnos = {
+    'Jean Carlos OS': 27,
+    'Evelyn OS': 29,
+    'Tania E. OS': 24
+  };
  }
